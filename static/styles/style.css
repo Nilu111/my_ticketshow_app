@@ -1,5 +1,5 @@
 *{
-    margin: 0px;
+    margin: auto;
 }
 
 #container,#panel{
@@ -8,7 +8,7 @@
 
 
 #panel{
-    width: 70%;
+    width: 80%;
     height: auto;
     margin: auto;
     
@@ -17,8 +17,10 @@
 #input-form{
     border: 1px solid blue;
     margin: auto;
-    height: 500px;
-    width: 70% ;
+    margin-top:20px ;
+    height: 520px;
+    width: 600px ;
+    padding: 10px;
     border-radius: 20px;
     background-color: rgb(226, 243, 244);
 }
