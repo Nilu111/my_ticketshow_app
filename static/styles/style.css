@@ -47,6 +47,9 @@
     color: blueviolet;
     text-align: center;
 }
-/* #text{
-    text-align: start;
-} */
+#index_text{
+    text-align:center;
+    margin-top: 20%;
+    color: brown;
+
+}
