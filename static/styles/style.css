@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+}
+
+#container,#panel{
+    border: 2px solid black;
+}
+
+
+#panel{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    
+}
+
+#input-form{
+    border: 1px solid blue;
+    margin: auto;
+    height: 500px;
+    width: 70% ;
+    border-radius: 20px;
+    background-color: rgb(226, 243, 244);
+}
+
+
+#login-text,#signup-text{
+    color: black;
+    text-align: center;
+}
+
+#login-form,#signup-form{
+    margin: 10px;
+}
+
+#heading{
+    color: blueviolet;
+    text-align: center;
+}
