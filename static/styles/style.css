@@ -1,5 +1,5 @@
 *{
-    margin: auto;
+    margin: 0px;
 }
 
 #container,#panel{
@@ -18,10 +18,10 @@
     border: 1px solid blue;
     margin: auto;
     margin-top:20px ;
-    height: 520px;
+    height: 500px;
     width: 600px ;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: rgb(226, 243, 244);
 }
 
@@ -39,3 +39,6 @@
     color: blueviolet;
     text-align: center;
 }
+/* #text{
+    text-align: start;
+} */
