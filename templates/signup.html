@@ -12,31 +12,34 @@
         <h1 id="heading">My Cine World</h1>
         <div id="panel">
           <h3 id="signup-text">Signup page</h3>
+          <form action="/signup" method="POST">
           <div id="input-form">
             <form id="signup-form">
                 <div class="mb-3">
                     <label for="email" class="form-label">username(E-mail)</label>
-                    <input type="email" class="form-control" id="email" placeholder="xxxx@gmail.com" >
+                    <input type="email" class="form-control" id="email" name="username" placeholder="xxxx@gmail.com" >
                 </div>
                 <div class="mb-3">
                   <label for="pwd" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="password">
+                  <input type="password" class="form-control" id="pwd" name="password" placeholder="password">
                 </div>
                 <div class="mb-3">
                     <label for="fullname" class="form-label" >Full Name</label>
-                    <input type="text" class="form-control" id="username"placeholder="full name" >
+                    <input type="text" class="form-control" id="username" name="fullname" placeholder="full name" >
                 </div>
                 <div class="mb-3">
                   <label for="location" class="form-label">Location</label>
-                  <input type="text" class="form-control" id="location" placeholder="jamshedpur" >
+                  <input type="text" class="form-control" id="location" name="location" placeholder="jamshedpur" >
                 </div>
                 <div class="mb-3">
                   <label for="pincode" class="form-label">Pin Code</label>
-                  <input type="text" class="form-control" id="pincode" placeholder="83xx02" >
+                  <input type="text" class="form-control" id="pincode" name="pincode" placeholder="83xx02" >
                 </div>
               <button type="submit" class="btn btn-primary">Register</button>  Already have an account? <a href="/login">login here</a>
+              <div id="error_msg">{{msg}}</div>
             </form>
           </div>
+        </form>
         </div>
     </div>
 </body>

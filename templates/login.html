@@ -12,19 +12,22 @@
       <h1 id="heading">My Cine World</h1>
         <div id="panel">
           <h3 id="login-text">Login page</h3>
+          <form action="/login" method="POST">
           <div id="input-form">
             <form id="login-form">
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="username" >
+                <input type="text" class="form-control" id="username" name="username" placeholder="username" >
               </div>
               <div class="mb-3">
                 <label for="pwd" class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="password" id="pwd">
+                <input type="password" class="form-control" placeholder="password" id="pwd" name="password">
               </div>
-              <button type="submit" class="btn btn-primary">Login</button> New user? <a href="/signup">register here</a>
+              <button type="submit" class="btn btn-primary">Login</button> New user? <a href="/signup">register here</a> <br>
+              <div id="error_msg">{{msg}}</div>
             </form>
           </div>
+        </form>
         </div>
     </div>
 </body>
