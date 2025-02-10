@@ -29,6 +29,9 @@ class Theatre(db.Model):
     capacity=db.Column(db.Integer,nullable=False)
     show=db.relationship("Show",cascade="all,delete",backref="theatre",lazy=True) #theater can acess all of his show
 
+#cascade is used as ( if the user table is deleted then all the tickets of that user will be deleted)
+
+
 # third endity
 
 class Show(db.Model):

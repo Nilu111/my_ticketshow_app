@@ -34,20 +34,24 @@
           <form action="#" method="POST">
           <div id="input-form">
                 <div class="mb-3">
-                    <label for="theater_name" class="form-label" >Full Name</label>
-                    <input type="text" class="form-control" id="theater_name" name="theater_name" placeholder="theater name" >
+                    <label for="v_id" class="form-label" >Venue ID</label>
+                    <input type="number" class="form-control" id="v_id" name="v_id" value="{{venue_id}}" readonly>
                 </div>
                 <div class="mb-3">
-                  <label for="location" class="form-label">Location</label>
-                  <input type="text" class="form-control" id="location" name="location" placeholder="theater location" >
+                    <label for="show_name" class="form-label" >Show Name</label>
+                    <input type="text" class="form-control" id="show_name" name="show_name" placeholder="show name" >
                 </div>
                 <div class="mb-3">
-                  <label for="pincode" class="form-label">Pin Code</label>
-                  <input type="number" class="form-control" id="pincode" name="pincode" placeholder="pincode" >
+                  <label for="tags" class="form-label">Tags</label>
+                  <input type="text" class="form-control" id="tags" name="tags" placeholder="genra" >
                 </div>
                 <div class="mb-3">
-                  <label for="capacity" class="form-label">Capacity</label>
-                  <input type="number" class="form-control" id="capacity" name="capacity" placeholder="theater capacity" >
+                  <label for="date_time" class="form-label">Date-Time</label>
+                  <input type="datetime-local" class="form-control" id="date_time" name="date_time" placeholder="xx/xx/xxxx" >
+                </div>
+                <div class="mb-3">
+                  <label for="tkt_price" class="form-label">Ticket Price</label>
+                  <input type="number" class="form-control" id="tkt_price" name="tkt_price" placeholder="0" >
                 </div>
                 <div>
                     <button type="submit" class="btn btn-success">submit</button>

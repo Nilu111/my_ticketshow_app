@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,url_for,redirect
 from .models import *
 from flask import current_app as app
+from datetime import datetime
 
 
 @app.route('/')
@@ -66,6 +67,21 @@ def add_venue(name):
         
     return render_template("add_venue.html",name=name)
 
+
+@app.route('/show/<venue_id>/<name>',methods=["GET","POST"])
+def add_show(venue_id,name):
+    if request.method=="POST":
+        sname=request.form.get('show_name')
+        tags=request.form.get('tags')
+        tkt_price=request.form.get('tkt_price')
+        date_time=request.form.get('date_time')
+        dt_time=datetime.strptime(date_time,"%Y-%m-%dT%H:%M")
+        new_show=Show(name=sname,tags=tags,ticket_price=tkt_price,date_time=dt_time,theatre_id=venue_id)
+        db.session.add(new_show)
+        db.session.commit()
+        return redirect(url_for("admin_dashboard",name=name))
+    
+    return render_template("add_show.html",name=name,venue_id=venue_id)
 
 def get_theatres():
     theatres=Theatre.query.all()
