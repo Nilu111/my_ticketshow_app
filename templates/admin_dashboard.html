@@ -17,14 +17,14 @@
               <div  class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.html">Summary</a>
+                    <a class="nav-link active" aria-current="page" href="#">Summary</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="login.html">Logout</a>
+                    <a class="nav-link active" href="/login">Logout</a>
                   </li>
                 </ul>
                 <span class="navbar-text">
-                  Welcome Admin
+                  Welcome {{name}}
                 </span>
               </div>
             </div>
@@ -32,33 +32,46 @@
     <!-- nav bar ends here -->
      <!-- grid system starts here -->
      <div class="container">
+      {%if theatres%}
       <div class="row">
+        {%for theatre in theatres%}
         <div class="col">
           <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">Venue 1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">pjp cinepolis</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-outline-primary">+Add show</button>
+                <h5 class="card-title">{{theatre.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{theatre.location}}</h6>
+                {%if theatre.shows%}
+                <table>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Date/time</th>
+                  </tr>
+                  {%for show in theatre.shows%}
+                  <tr>
+                    <td>{{show.id}}</td>
+                    <td>{{show.name}}</td>
+                    <td>{{show.date_time}}</td>
+                  </tr>
+                  {%endfor%}
+                </table>
+                {%else%}
+                <p>No show here</p>
+                {%endif%}
+                <button type="button" class="btn btn-outline-success">+Add show</button>
               </div>
             </div>
         </div>
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Venue 2</h5>
-                <h6 class="card-subtitle mb-2 text-muted">ilex</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-outline-primary">+Add show</button>
-              </div>
-            </div>
-        </div>
+        {%endfor%}
       </div>
+      {%else%}
+      <h3>No Venue available</h3>
+      {%endif%}
     </div>
     <!-- grid system end here -->
         </div>
         <div class="d-flex justify-content-md-center">
-          <button type="button"  class="btn btn-primary  d-flex justify-content-center">Add venue</button>
+          <a href="/venue/{{name}}" type="button"  class="btn btn-primary  d-flex justify-content-center">Add venue</a>
         </div>
     </div>
 </body>
