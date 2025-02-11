@@ -23,6 +23,10 @@
                     <a class="nav-link active" href="/login">Logout</a>
                   </li>
                 </ul>
+                <form class="d-flex" method="POST" action="/search/{{name}}">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_txt" id="search_txt">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>  
                 <span class="navbar-text">
                   Welcome {{name}}
                 </span>
@@ -38,7 +42,7 @@
         <div class="col">
           <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <div id="theatre-name"><h5 class="card-title">{{theatre.name}}</h5></div>
+                <div id="theatre-name"><h5 class="card-title"><a href="#">{{theatre.name}}</a></h5></div>
                 <h6 class="card-subtitle mb-2 text-muted">{{theatre.location}}</h6>
                 {%if theatre.show%}
                 <table id="show-table">
@@ -49,7 +53,7 @@
                   </tr>
                   {%for show in theatre.show%}
                   <tr>
-                    <td>{{show.id}}</td>
+                    <td><a href="#">{{show.id}}</a></td>
                     <td>{{show.name}}</td>
                     <td>{{show.date_time}}</td>
                   </tr>
